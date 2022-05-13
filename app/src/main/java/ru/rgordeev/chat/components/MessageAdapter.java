@@ -50,16 +50,16 @@ public class MessageAdapter extends BaseAdapter {
         Message message = messages.get(i);
 
         if (message.isBelongsToCurrentUser()) {
-            convertView = messageInflater.inflate(R.layout.my_message, null);
-            holder.messageBody = (TextView) convertView.findViewById(R.id.message_body);
+            convertView = messageInflater.inflate(R.layout.list_mymessage, null);
+            holder.messageBody = (TextView) convertView.findViewById(R.id.message_text);
             holder.messageBody.setText(message.getMessage());
             convertView.setTag(holder);
         } else {
-            convertView = messageInflater.inflate(R.layout.their_message, null);
-            holder.avatar = (View) convertView.findViewById(R.id.avatar);
-            holder.name = (TextView) convertView.findViewById(R.id.name);
+            convertView = messageInflater.inflate(R.layout.list_friendmessage, null);
+
+            holder.name = (TextView) convertView.findViewById(R.id.nameview);
             holder.name.setText(message.getFrom());
-            holder.messageBody = (TextView) convertView.findViewById(R.id.message_body);
+            holder.messageBody = (TextView) convertView.findViewById(R.id.message_textf);
             holder.messageBody.setText(message.getMessage());
             convertView.setTag(holder);
         }
@@ -68,7 +68,7 @@ public class MessageAdapter extends BaseAdapter {
     }
 
     private class MessageViewHolder {
-        public View avatar;
+
         public TextView name;
         public TextView messageBody;
     }

@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        editText = findViewById(R.id.loginEditText);
+        setContentView(R.layout.layout_email_code);
+        editText = findViewById(R.id.editLogin);
         tokenTextView = findViewById(R.id.tokenTextView);
     }
 
-    public void onButton_Click(View view) {
+    public void onLoginClick(View view) {
         String login = editText.getText().toString();
         if (login.length() > 0) {
             tokenTextView.setText(R.string.token_expected_label);

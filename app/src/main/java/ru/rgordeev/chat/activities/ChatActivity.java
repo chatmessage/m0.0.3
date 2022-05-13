@@ -39,12 +39,12 @@ public class ChatActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
+        setContentView(R.layout.activity_main);
 
-        messagesView = findViewById(R.id.messages_view);
+        messagesView = findViewById(R.id.messagelist);
         messageAdapter = new MessageAdapter(this);
         messagesView.setAdapter(messageAdapter);
-        editText = findViewById(R.id.editText);
+        editText = findViewById(R.id.textField);
 
         jsonParser = new Gson();
 
